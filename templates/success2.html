@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Success!
+{% endblock %}
+
+{% block body %}
+    <h1>Success!</h1>
+
+    <!-- <h3>Thank You for sharing your Feedback for one of our books.</h3>  -->
+    <p style="font-size: 1.4vw;">Enter the ISBN number or Title or Author of the Book.</p>
+
+    <form action="{{ url_for('search') }}" method="post">
+        <div class="form-group">
+            <input class="form-control" name="isbnnumber" placeholder="ISBN #">
+        </div>
+
+        <div class="form-group">
+            <input class="form-control" name="title" placeholder="Title">
+        </div>
+
+        <div class="form-group">
+            <input class="form-control" name="author" placeholder="Author">
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-primary">Search</button>
+        </div>
+    </form>
+{% endblock %}
