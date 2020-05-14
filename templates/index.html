@@ -5,35 +5,38 @@
 {% endblock %}
 
 {% block body %}
-    <h1>Welcome to Goodread Books</h1>
+    <div class="boxs">
+        <h1>Welcome to Books Review</h1>
+        <h5>Already have an account? Log In</h5>
+        <form action="{{ url_for('login') }}" method="post">
+            <div class="form-group">
+                <input class="form-control" name="id" placeholder="Username">
+            </div>
 
-    <form action="{{ url_for('login') }}" method="post">
-        <div class="form-group">
-            <input class="form-control" name="id" placeholder="ID">
-        </div>
+            <div class="form-group">
+                <input class="form-control" name="password" placeholder="Password">
+            </div>
 
-        <div class="form-group">
-            <input class="form-control" name="password" placeholder="Password">
-        </div>
+            <div class="form-group">
+                <button class="btn btn-primary">Log In</button>
+            </div>
 
-        <div class="form-group">
-            <button class="btn btn-primary">Log In</button>
-        </div>
+        </form>
 
-    </form>
+        <div style="height: 5vh;"></div>
+        <h5>Register Yourself</h5>
+        <form action="{{ url_for('register') }}" method="post">
+            <div class="form-group">
+                <input class="form-control" name="id" placeholder="Username">
+            </div>
 
+            <div class="form-group">
+                <input class="form-control" name="password" placeholder="Password">
+            </div>
 
-    <form action="{{ url_for('register') }}" method="post">
-        <div class="form-group">
-            <input class="form-control" name="id" placeholder="ID">
-        </div>
-
-        <div class="form-group">
-            <input class="form-control" name="password" placeholder="Password">
-        </div>
-
-        <div class="form-group">
-            <button class="btn btn-primary">Register</button>
-        </div>
-    </form>
+            <div class="form-group">
+                <button class="btn btn-primary">Register</button>
+            </div>
+        </form>
+    </div>
 {% endblock %}

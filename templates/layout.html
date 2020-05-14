@@ -4,8 +4,21 @@
         <title>{% block title %}{% endblock %}</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
         <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+
+        <style>
+            .boxs {
+                margin: auto; 
+                width: 40vw;
+                padding: 1.3vh 1.3vw 1.3vh 1.3vw; 
+                margin-top: 30px; 
+                /* background-color: rgb(180, 139, 218); */
+                position: absolute;
+                top: 0px;
+                left: 29vw;
+            }
+        </style>
     </head>
-    <body style="font-family: 'Raleway';">
+    <body style="font-family: 'Raleway'; background-image: url({{ url_for('static', filename='back1.png') }}); background-size: 100vw auto">
         <div class="container">
             {% block body %}
             {% endblock %}

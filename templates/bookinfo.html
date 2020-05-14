@@ -31,7 +31,7 @@
             <button class="btn btn-primary">Submit</button>
         </div>
         <br>
-        <h4 style="font-family: Raleway;">User Reviews</h4>
+        <h4 style="font-family: Raleway;"><strong>Reviews</strong></h4>
         <ul>
             {% for rev in reviews %}
             <li>{{ rev[1] }}</li>
@@ -40,7 +40,7 @@
             {% endfor %}
         </ul>
 
-        <h4 style="font-family: Raleway;">Goodread Ratings</h4>
+        <h4 style="font-family: Raleway;"><strong>Goodread Ratings</strong></h4>
         <ul>
             <li>Average Ratings: {{ avg_gr }}</li>
             <li>Work Ratings Count: {{ work_gr }}</li>

@@ -22,7 +22,7 @@ engine = create_engine(os.getenv("DATABASE_URL"))
 db = scoped_session(sessionmaker(bind=engine))
 
 
-@app.route("/")
+@app.route("/login")
 def index():
     return render_template("index.html")
 
@@ -40,7 +40,7 @@ def register():
     db.commit()
     return render_template("success.html")    
 
-@app.route("/login", methods=["POST"])
+@app.route("/welcome", methods=["POST"])
 def login():
     name = request.form.get("id")
     passw = request.form.get("password")
