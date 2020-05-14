@@ -65,7 +65,7 @@ def search():
     i = "%" + isbn + "%"
     a = "%" + author + "%"
     if len(title) > 0:
-        title2 = db.execute("SELECT title, isbn FROM books WHERE title LIKE :ti", {"ti": t}).fetchall()
+        title2 = db.execute("SELECT title, isbn FROM books WHERE lower (title) LIKE lower (:ti)", {"ti": t}).fetchall()
         if len(title2) == 0: 
             return render_template("errorduplicatereview.html", message="Zero Books Found!!!")
 
@@ -79,7 +79,7 @@ def search():
         return render_template("book.html", title2=isbn2)
 
     elif len(author) > 0:
-        author2 = db.execute("SELECT title, isbn FROM books WHERE author LIKE :au", {"au": a}).fetchall()
+        author2 = db.execute("SELECT title, isbn FROM books WHERE lower(author) LIKE lower(:au)", {"au": a}).fetchall()
         if len(author2) == 0: 
             return render_template("errorduplicatereview.html", message="Zero Books Found!!!")
 

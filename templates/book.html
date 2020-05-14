@@ -10,7 +10,7 @@
     
     <ul>
         {% for t in title2 %}
-        <li><a href="{{ url_for('apis', isbn=t[1]) }}">{{ t[0] }}</a></li>
+        <li><a href="{{ url_for('apis', isbn=t[1]) }}" style="color: black;">{{ t[0] }}</a></li>
         {% endfor %}
     </ul>
 {% endblock %}
